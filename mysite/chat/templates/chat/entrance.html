@@ -1,0 +1,28 @@
+{% extends 'chat/base.html' %}
+{% load static %}
+<!--https://www.hiramine.com/index.html 参考サイト-->
+{% block content %}
+<div id="div_container">
+    <div id="div_header">
+    <h1>My Chat</h1>
+    </div>
+
+    <div id="div_main">
+
+    <div id="div_join_screen">
+        <!-- エンターキーによるボタン押下を行うために、<button>ではなく<form>と<input type="submit">を使用。
+        ボタン押下(=submit)時にページリロードが行われないように、onsubmitの設定の最後に"return false;"を追加。-->
+        <form action="{% url 'chat:chat'%}" onsubmit=" onsubmitButton_JoinChat(); return false;" style="text-align: center; width:100%;">
+            User name<br />
+            <input type="text" id="input_username" placeholder="Enter User name"autofocus><br/><br/>
+            Room name<br />
+            <input type="text" id="input_roomname" placeholder="Enter Room name"autofocus><br/><br/>
+            Room name must be a string containing only ASCII alphanumerics, hyphens, or periods.<br /><br />
+            <button type="submit" >Join Chat</button>
+        </form>
+    </div>
+    
+    </div>
+</div>
+<div id = "test">あああ</div>
+{% endblock %}

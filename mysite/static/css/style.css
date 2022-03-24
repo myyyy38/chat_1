@@ -1,0 +1,55 @@
+
+#test {
+    color: aqua;
+}
+
+input:read-only, textarea:read-only{
+    background-color: lightgreen;
+}
+
+html{
+    height: 100% /*画面を100%使う*/
+}
+body {
+    margin: 0; /* 画面全体を使用する場合のお約束 */
+    padding: 0; /* 画面全体を使用する場合のお約束 */
+    min-height: 100%; /* 画面全体を使用する場合のお約束 */
+    height: 100%; /* 画面全体を使用する場合のお約束 */
+}
+
+#div_container {
+    min-height: 100vh; /* 画面全体を使用する場合のお約束 */
+    height: 100%; /* 画面全体を使用する場合のお約束 */
+    display: flex; /* 子要素をflex配置とする */
+    flex-direction: column; /* 子要素のflex配置の方向は列方向（縦方向）*/
+}
+
+/* bodyで「margin: 0」にしたのを戻す（ブラウザ領域境界に余白なしでHTML要素が表示されるのを余白ありに戻す） */
+#div_header{
+    margin: 0px 8px; 
+}
+
+#div_main {
+    flex: 1; /*親要素の（縦方向の）残り全部を使う*/
+}
+
+#div_join_screen {
+    width: 100%; /*親要素(#div_main)の（縦方向の）全部を使う*/
+    height: 100%; /*親要素(#div_main)の（縦方向の）全部を使う*/
+    display: flex; /* 子要素をflex配置とする */
+    align-items: center; /*子要素を上下中央揃えとする。「display: flex」必要*/
+    z-index: 10;
+    background-color: #888;
+}
+
+#div_chat_screen {
+    margin: 0px 8px; /* bodyで「margin: 0」にしたのを戻す（ブラウザ領域境界に余白なしでHTML要素が表示されるのを余白ありに戻す） */
+}
+
+.btn {
+    border-radius: 5px;
+    background-color: lightblue;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+  }

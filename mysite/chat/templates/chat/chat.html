@@ -1,0 +1,34 @@
+{% extends 'chat/base.html' %}
+{% load static %}
+<!--https://www.hiramine.com/index.html 参考サイト-->
+{% block content %}
+<div id="div_container">
+    <div id="div_header">
+    <h1>My Chat</h1>
+    </div>
+
+    <div id="div_main">
+        <div id="div_chat_screen">
+        <form action="{% url 'chat:entrance'%}" onclick="onclickButton_LeaveChat()">
+            <button type="submit" >Leave  Chat</button>
+        </form><br/>
+
+        Room name : <input type ="text" id="text_roomname" readonly="readonly"><br/>
+        User name : <input type ="text" id="text_username" readonly="readonly"><br/>
+
+        <form action="" onsubmit=" onsubmitButton_Send(); return false;">
+            Message : <input type="text" id="input_message" autocomplete="off" autofocus /><input type="submit" value="Send" />
+        </form>
+        <ul id="list_message"></ul>
+        </div>
+    </div>
+    
+</div>
+<script>
+     console.log("aaa")
+     console.log(g_socket)
+     console.log(window.location.host)
+</script>
+
+<div id = "test">iii</div>
+{% endblock %}
